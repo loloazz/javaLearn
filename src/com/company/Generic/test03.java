@@ -1,0 +1,98 @@
+package com.company.Generic;
+
+import java.util.*;
+
+/**
+ * @ClassName: test03
+ * @Author: YL
+ * @Date: 2021/5/3 11:25
+ * @Description: TODO
+ */
+public class test03 {
+    public static void main(String[] args) {
+        DAO<User> userDAO = new DAO<>();
+        userDAO.save("1",new User(20,20,"lala,"));
+        List<User> list = userDAO.list();
+        System.out.println(list);
+    }
+
+}
+
+class DAO<T> {
+    private Map<String, T> map = new HashMap<>();
+    public void save(String id,T entity){
+        map.put(id,entity);
+
+    }
+
+    public T get(String id){
+       T obj=map.get(id);
+        return obj;
+    }
+
+    public void update(String id,T entity){
+        map.put(id,entity);
+
+    }
+
+    public List<T> list(){
+        Collection<T> values = map.values();
+        List<T> list1=new ArrayList<>();
+        for (T value : values) {
+            list1.add(value);
+
+        }
+        return list1;
+    }
+
+    public void  delete(String id){
+        map.remove(id);
+    }
+
+}
+
+
+class User {
+    private int id;
+    private int age;
+    private String name;
+
+    public User(int id, int age, String name) {
+        this.id = id;
+        this.age = age;
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", age=" + age +
+                ", name='" + name + '\'' +
+                '}';
+    }
+}
