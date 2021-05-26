@@ -28,3 +28,17 @@ public class Integer_jizhi {
 
     }
 }
+//    Integer m = 1;
+//    Integer n = 1;
+//        System.out.println(m == n);//返回的true；
+//
+//
+//
+//                Integer x = 128;
+//                Integer y = 128;
+//
+//                System.out.println(x ==y);//返回false
+//
+//
+//                }
+//                }

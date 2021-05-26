@@ -27,12 +27,12 @@ public class Student extends Person{
         return  getName()+"爱玩足球！";
     }
 
+
     @Override
     public String toString() {
-        return "学生信息" +"\n"+
-                "姓名：" + name + '\n' +
-                "年龄" + getAge() +'\n'+
-                "性别" + getSex() +'\n'+
-                "学号："+getStu_id()+"\n";
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", stu_id=" + stu_id +
+                '}';
     }
 }
